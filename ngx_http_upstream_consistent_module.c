@@ -158,10 +158,10 @@ ngx_http_upstream_init_consistent(ngx_conf_t *cf, ngx_http_upstream_srv_conf_t *
                 return NGX_ERROR;
             }
 
-            if (ngx_strstr(peers[i].server->addrs->name.data, ":11211") != NULL) {
+            /*if (ngx_strstr(peers[i].server->addrs->name.data, ":11211") != NULL) {
                  peers[i].server->addrs->name.len -= 6;
                  peers[i].server->addrs->name.data[peers[i].server->addrs->name.len] = '\0';
-            }
+            }*/
 
             ngx_snprintf(sort_host, MAX_HOST_SORT_LENGTH, "%V-%ui%Z", &peers[i].server->addrs->name, pointer_index-1);
 
